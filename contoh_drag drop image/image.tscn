@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://abjadall.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="image" type="Area2D" groups=[
+"gmbr",
+]]
+
+transform/pos = Vector2( 133.348, 80.9373 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 10.6635, 0, 0, 13.6827, 4.62666, -1.80199 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+abjad = null
+image = null
+idx = null
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 6
+region_rect = Rect2( -8, 2, 374, 378 )
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -87.0
+margin/top = 53.0
+margin/right = 92.0
+margin/bottom = 136.0
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 4.62666, -1.80199 )
+transform/scale = Vector2( 10.6635, 13.6827 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+

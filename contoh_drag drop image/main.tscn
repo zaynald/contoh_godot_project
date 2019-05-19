@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://mainutama.gd" type="Script" id=1]
+[ext_resource path="res://image.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tempatnya.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="image" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 445.672, 181.148 )
+z/z = 1
+abjad = "a"
+idx = 0
+
+[node name="image2" parent="." instance=ExtResource( 2 )]
+
+z/z = 2
+abjad = "b"
+idx = 1
+
+[node name="image3" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 768.017, 167.787 )
+z/z = 3
+abjad = "c"
+idx = 2
+
+[node name="image4" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 200.155, 396.602 )
+z/z = 4
+abjad = "d"
+idx = 3
+
+[node name="tempatnya" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 820.183, 466.673 )
+abjad = "a"
+
+[node name="tempatnya 2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 571.849, 482.585 )
+abjad = "b"
+
+[node name="tempatnya3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 340.32, 488.164 )
+abjad = "c"
+
+[node name="tempatnya4" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 808.958, 292.898 )
+abjad = "d"
+
+
