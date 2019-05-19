@@ -1,0 +1,257 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://player_s2.gd" type="Script" id=1]
+[ext_resource path="res://Wildlife_libtheora.ogv" type="VideoStream" id=2]
+[ext_resource path="res://play.png" type="Texture" id=3]
+
+[node name="scene2" type="Node2D"]
+
+[node name="player" type="Area2D" parent="."]
+
+input/pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="player"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 20.0
+margin/top = 95.0
+margin/right = 127.0
+margin/bottom = 127.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "back scene1"
+flat = false
+
+[node name="Label" type="Label" parent="player"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 19.0
+margin/top = 6.0
+margin/right = 111.0
+margin/bottom = 32.0
+text = "ini scene 2"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button 2" type="Button" parent="player"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 169.0
+margin/top = 98.0
+margin/right = 273.0
+margin/bottom = 128.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "ganti musik"
+flat = false
+
+[node name="Button 3" type="Button" parent="player"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 21.0
+margin/top = 155.0
+margin/right = 126.0
+margin/bottom = 187.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "stop bk sound"
+flat = false
+
+[node name="Button 4" type="Button" parent="player"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 21.0
+margin/top = 212.0
+margin/right = 125.0
+margin/bottom = 241.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "play"
+flat = false
+
+[node name="Button 5" type="Button" parent="player"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 170.0
+margin/top = 156.0
+margin/right = 269.0
+margin/bottom = 183.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "buka file"
+flat = false
+
+[node name="FileDialog" type="FileDialog" parent="player"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 360.0
+margin/top = 47.0
+margin/right = 835.0
+margin/bottom = 398.0
+popup/exclusive = false
+window/title = "Open a File or Directory"
+dialog/hide_on_ok = false
+mode = 3
+access = 2
+filters = StringArray(  )
+show_hidden_files = false
+
+[node name="Button 6" type="Button" parent="player"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 20.0
+margin/top = 262.0
+margin/right = 121.0
+margin/bottom = 288.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "pause"
+flat = false
+
+[node name="Label 2" type="Label" parent="player"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 324.0
+margin/top = 158.0
+margin/right = 415.0
+margin/bottom = 177.0
+text = "path"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label 3" type="Label" parent="player"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 326.0
+margin/top = 184.0
+margin/right = 425.0
+margin/bottom = 202.0
+text = "tes"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="VideoPlayer" type="VideoPlayer" parent="player"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 428.0
+margin/top = 153.0
+margin/right = 567.0
+margin/bottom = 228.0
+stream/audio_track = 0
+stream/stream = ExtResource( 2 )
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+expand = true
+
+[node name="TextureButton" type="TextureButton" parent="player"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 437.0
+margin/top = 248.0
+margin/right = 501.0
+margin/bottom = 312.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 3 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[node name="TextureButton 2" type="TextureButton" parent="player"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 504.0
+margin/top = 247.0
+margin/right = 613.0
+margin/bottom = 356.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 3 )
+params/resize_mode = 0
+params/stretch_mode = 0
+
+[connection signal="button_down" from="player/Button" to="player" method="_on_Button_button_down"]
+
+[connection signal="button_down" from="player/Button 2" to="player" method="_on_Button_2_button_down"]
+
+[connection signal="button_down" from="player/Button 3" to="player" method="_on_Button_3_button_down"]
+
+[connection signal="button_down" from="player/Button 4" to="player" method="_on_Button_4_button_down"]
+
+[connection signal="button_down" from="player/Button 5" to="player" method="_on_Button_5_button_down"]
+
+[connection signal="confirmed" from="player/FileDialog" to="player" method="_on_FileDialog_confirmed"]
+
+[connection signal="file_selected" from="player/FileDialog" to="player" method="_on_FileDialog_file_selected"]
+
+[connection signal="files_selected" from="player/FileDialog" to="player" method="_on_FileDialog_files_selected"]
+
+[connection signal="pressed" from="player/Button 6" to="player" method="_on_Button_6_pressed"]
+
+[connection signal="toggled" from="player/Button 6" to="player" method="_on_Button_6_toggled"]
+
+[connection signal="button_down" from="player/TextureButton" to="player" method="_on_TextureButton_button_down"]
+
+[connection signal="toggled" from="player/TextureButton" to="player" method="_on_TextureButton_toggled"]
+
+[connection signal="button_down" from="player/TextureButton 2" to="player" method="_on_TextureButton_2_button_down"]
+
+
