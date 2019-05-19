@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://intance.tscn" type="PackedScene" id=2]
+
+[node name="main" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 50.0
+margin/top = 32.0
+margin/right = 128.0
+margin/bottom = 52.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "call group"
+flat = false
+
+[node name="intance" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 201, 290 )
+
+[node name="intance1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 423, 400 )
+
+[node name="intance2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 440, 188 )
+
+[node name="Button 2" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 48.0
+margin/top = 79.0
+margin/right = 186.0
+margin/bottom = 99.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "lihat node via group"
+flat = false
+
+[node name="Button 3" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 12.0
+margin/bottom = 20.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "emit tes"
+flat = false
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[connection signal="pressed" from="Button 2" to="." method="_on_Button_2_pressed"]
+
+[connection signal="pressed" from="Button 3" to="." method="_on_Button_3_pressed"]
+
+
