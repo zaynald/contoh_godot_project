@@ -1,0 +1,206 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://node.gd" type="Script" id=1]
+[ext_resource path="res://tinta.png" type="Texture" id=2]
+[ext_resource path="res://drawing.gd" type="Script" id=3]
+[ext_resource path="res://kuas.png" type="Texture" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="bg" type="Polygon2D" parent="."]
+
+polygon = Vector2Array( 0, 0, 800, 0, 800, 600, 0, 600 )
+uv = Vector2Array(  )
+color = Color( 0, 0.3125, 0.0341797, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="tes" type="Sprite" parent="."]
+
+transform/pos = Vector2( 370, 220 )
+
+[node name="tes2" type="Node2D" parent="."]
+
+transform/pos = Vector2( 158.605, 380.147 )
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 883.0
+margin/top = 12.0
+margin/right = 977.0
+margin/bottom = 89.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+color = Color( 1, 1, 1, 1 )
+edit_alpha = true
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+editor/display_folded = true
+layer = -10
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer"]
+
+transform/pos = Vector2( 39.2994, 33.9647 )
+
+[node name="tinta" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 800.0
+margin/bottom = 600.0
+
+[node name="Viewport" type="Viewport" parent="."]
+
+rect = Rect2( 0, 0, 800, 600 )
+own_world = false
+world = null
+transparent_bg = true
+render_target/enabled = true
+render_target/v_flip = false
+render_target/clear_on_new_frame = true
+render_target/filter = false
+render_target/gen_mipmaps = false
+render_target/update_mode = 2
+audio_listener/enable_2d = false
+audio_listener/enable_3d = false
+physics/object_picking = false
+gui/disable_input = false
+
+[node name="capture" type="TextureFrame" parent="Viewport"]
+
+visibility/blend_mode = 4
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+stretch_mode = 0
+
+[node name="bg1" type="Polygon2D" parent="Viewport"]
+
+visibility/visible = false
+polygon = Vector2Array( 0, 0, 800, 0, 800, 600, 0, 600 )
+uv = Vector2Array(  )
+color = Color( 0, 0.3125, 0.0341797, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="Sprite" type="Sprite" parent="Viewport"]
+
+centered = false
+script/script = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="Viewport"]
+
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="ViewportSprite" type="ViewportSprite" parent="."]
+
+visibility/blend_mode = 4
+viewport = NodePath("../Viewport")
+centered = false
+
+[node name="kuas" type="Sprite" parent="."]
+
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 900.0
+margin/top = 160.0
+margin/right = 950.0
+margin/bottom = 180.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "draw"
+flat = false
+
+[node name="Button 2" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 900.0
+margin/top = 240.0
+margin/right = 970.0
+margin/bottom = 260.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
+[connection signal="color_changed" from="ColorPickerButton" to="." method="_on_ColorPickerButton_color_changed"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="input_event" from="Control" to="." method="_on_Control_input_event"]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[connection signal="pressed" from="Button 2" to="." method="_on_Button_2_pressed"]
+
+
