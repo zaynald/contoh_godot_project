@@ -1,0 +1,186 @@
+[gd_scene load_steps=16 format=1]
+
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player.gd" type="Script" id=2]
+[ext_resource path="res://sound/a.wav" type="Sample" id=3]
+[ext_resource path="res://sound/b.wav" type="Sample" id=4]
+[ext_resource path="res://sound/OGG/BG_Music.ogg" type="AudioStream" id=5]
+[ext_resource path="res://pesawat v1 body.png" type="Texture" id=6]
+[ext_resource path="res://pesawat v1 baling1.png" type="Texture" id=7]
+[ext_resource path="res://pesawat v1 baling2.png" type="Texture" id=8]
+[ext_resource path="res://pesawat v1 baling3.png" type="Texture" id=9]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=10]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/a = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
+samples/b = { "db":0.0, "pitch":1.0, "sample":ExtResource( 4 ) }
+
+[sub_resource type="NavigationPolygon" id=2]
+
+vertices = Vector2Array( 538.675, 42.021, 538.675, 431.174, 49.3111, 431.174, 49.3111, 42.021 )
+polygons = [ IntArray( 0, 1, 2, 3 ) ]
+outlines = [ Vector2Array( 538.675, 42.021, 538.675, 431.174, 49.3111, 431.174, 49.3111, 42.021 ) ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ { "frames":[ ExtResource( 7 ) ], "loop":true, "name":"New Anim", "speed":5.0 }, { "frames":[ ExtResource( 8 ) ], "loop":true, "name":"New Anim 1", "speed":5.0 }, { "frames":[ ExtResource( 9 ) ], "loop":true, "name":"New Anim 2", "speed":5.0 } ]
+
+[sub_resource type="Animation" id=5]
+
+length = 0.2
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2 ), "transitions":FloatArray( 1, 1, 1 ), "update":1, "values":[ "New Anim", "New Anim 1", "New Anim 2" ] }
+
+[node name="main" type="Node2D"]
+
+[node name="GUI" parent="." instance=ExtResource( 1 )]
+
+z/z = 100
+
+[node name="player" type="Node2D" parent="."]
+
+[node name="Navigation" type="Navigation2D" parent="player"]
+
+script/script = ExtResource( 2 )
+
+[node name="suara" type="SamplePlayer2D" parent="player/Navigation"]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+[node name="Sprite" type="Sprite" parent="player/Navigation"]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="player/Navigation"]
+
+navpoly = SubResource( 2 )
+enabled = true
+
+[node name="StreamPlayer" type="StreamPlayer" parent="player/Navigation"]
+
+stream/stream = ExtResource( 5 )
+stream/play = false
+stream/loop = true
+stream/volume_db = -15.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="body" type="Area2D" parent="player/Navigation"]
+
+transform/pos = Vector2( 120.253, 232.155 )
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 3.50178, 0, 0, 2.57917, 60.3712, 13.9318 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/Navigation/body"]
+
+transform/pos = Vector2( 60.3712, 13.9318 )
+transform/scale = Vector2( 3.50178, 2.57917 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="orang" type="Sprite" parent="player/Navigation/body"]
+
+transform/scale = Vector2( 0.406103, 0.346752 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="player/Navigation/body/orang"]
+
+transform/pos = Vector2( 148.549, 42.2944 )
+transform/rot = 1.40988
+frames = SubResource( 4 )
+animation = "New Anim"
+playing = true
+flip_h = true
+
+[node name="Sprite" type="Sprite" parent="player/Navigation/body/orang"]
+
+visibility/visible = false
+transform/pos = Vector2( 141.34, 32.5597 )
+transform/scale = Vector2( 0.898343, 1.04244 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/Navigation/body/orang"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/ani = SubResource( 5 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "ani"
+
+[node name="Label" type="Label" parent="player/Navigation"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 56.0
+margin/top = 414.0
+margin/right = 123.0
+margin/bottom = 436.0
+text = "no"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="enemy" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 997.41, 247.27 )
+
+[node name="enemy 2" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 887.287, 134.685 )
+
+[node name="enemy 3" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 1061.37, 381.481 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 0, 1.14441e-05 )
+z/z = -10
+polygon = Vector2Array( -19.0283, -15.422, 826.183, -10.8779, 826.183, 500.339, -12.2121, 502.611 )
+uv = Vector2Array(  )
+color = Color( 0.301544, 0.701458, 0.941406, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[connection signal="area_enter" from="player/Navigation/body" to="player/Navigation" method="_on_body_area_enter"]
+
+
