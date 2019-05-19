@@ -1,0 +1,125 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "getar"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.3, 0.5, 0.8, 1 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 2.39494, 6.22687 ), Vector2( 2.99368, 2.39495 ), Vector2( -7.78358, 6.94535 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.2, 0.6, 1 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 5.0, -5.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sensor:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.2, 0.6, 1 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -27.0102, -3.68321 ), Vector2( 0, -14.7328 ), Vector2( 0, 19.6438 ), Vector2( 22.0993, 2.45547 ) ]
+}
+
+[node name="player" type="KinematicBody2D" groups=[
+"player",
+]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 3.29305, 0, 0, 3.29305, 0.371259, -0.111796 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 2.99368, 2.39495 )
+transform/rot = 5.0
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 0.371259, -0.111796 )
+transform/scale = Vector2( 3.29305, 3.29305 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[node name="sensor" type="Node2D" parent="."]
+
+transform/pos = Vector2( 0, 11.0496 )
+
+[node name="RayCast2D" type="RayCast2D" parent="sensor"]
+
+enabled = true
+cast_to = Vector2( 0, 50 )
+layer_mask = 1
+type_mask = 16
+
+[node name="RayCast2D 2" type="RayCast2D" parent="sensor"]
+
+enabled = true
+cast_to = Vector2( -50, 0 )
+layer_mask = 1
+type_mask = 16
+
+[node name="RayCast2D 3" type="RayCast2D" parent="sensor"]
+
+enabled = true
+cast_to = Vector2( 50, 0 )
+layer_mask = 1
+type_mask = 16
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 47.0
+margin/top = -14.0
+margin/right = 118.0
+margin/bottom = 11.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/getar = SubResource( 2 )
+playback/active = true
+playback/speed = 4.0
+blend_times = [  ]
+autoplay = "getar"
+
+
