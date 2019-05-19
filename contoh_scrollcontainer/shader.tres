@@ -1,0 +1,85 @@
+[gd_resource type="CanvasItemMaterial" load_steps=4 format=1]
+
+[ext_resource path="res://bgabc.png" type="Texture" id=1]
+[ext_resource path="res://bgalpha.png" type="Texture" id=2]
+
+[sub_resource type="CanvasItemShader" id=1]
+
+_code = {
+"fragment": "//uniform vec4 u_color_key;
+//hint_color;
+uniform color warnacari;
+
+uniform texture texmap;
+uniform texture texmap2;
+
+uniform color gantiwarna;
+//uniform float u_tolerance;
+float r=warnacari.r;
+float g=warnacari.g;
+float b=warnacari.b;
+//color c;
+//uniform float screen_h=600;
+//uniform float sprite_h=256;
+//float sprite_uv_h=sprite_h/screen_h;
+
+//vec2 flipped_screen_uv=vec2(SCREEN_UV.x,SCREEN_UV.y-sprite_uv_h*(1-2*UV.y));
+//COLOR=vec4(texscreen(flipped_screen_uv),1);
+
+//vec4 original_color=tex(TEXTURE,UV);
+//vec3 sc = texscreen(SCREEN_UV);
+vec4 sc2 = tex(texmap,UV);
+vec4 alpha = tex(texmap2,UV);
+//vec3 col = original_color.rgb;
+//vec3 diff3 = sc-col;
+
+vec3 diff = sc2.rgb-warnacari.rgb;
+
+//if(sc2.r==warnacari.r && sc2.g==warnacari.g && sc2.b==warnacari.b ) //ok work
+//if(sc2.rgb==vec3(r,g,b)) //ok work
+if(abs(length(diff))<0.01) //ok work
+{
+//COLOR=vec4(original_color.rgb,original_color.a);
+COLOR =vec4(gantiwarna.rgb,gantiwarna.a);
+//COLOR=vec4(vec3(0,1,0),1);
+//COLOR=vec4(original_color.rgb,1);
+//COLOR.rgb*=mix(tex(texmap,UV).r,tex(texmap,UV).g,tex(texmap,UV).b);
+
+
+//texscreen(TEXTURE)=tex(texmap,UV);
+}else{
+//COLOR=vec4(warnacari.rgb,1);
+//ok work
+//COLOR.rgb =vec3(0,0,0);
+//COLOR.a =0;
+
+COLOR=vec4(vec3(0,0,0),0); //ok work
+
+
+//texscreen(SCREEN_UV).r+=COLOR;
+//COLOR=vec4(gantiwarna.rgb,original_color.a);
+}
+//float m = max(max(abs(diff3.r),abs(diff3.g)),abs(diff3.b));
+
+//float brightness = length(col);
+//col =mix(col,u_reflacement_color.rgb*brightness,step(m,u_tolerance));
+//COLOR=vec4(diff3.g,col.g,col.b,original_color.a);
+
+
+",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+
+[resource]
+
+shader/shader = SubResource( 1 )
+shader/shading_mode = 0
+shader_param/warnacari = Color( 1, 1, 1, 1 )
+shader_param/texmap = ExtResource( 1 )
+shader_param/texmap2 = ExtResource( 2 )
+shader_param/gantiwarna = Color( 1, 1, 1, 1 )
+

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://image/buttonview.png" type="Texture" id=1]
+[ext_resource path="res://galleryfile.gd" type="Script" id=2]
+[ext_resource path="res://save/gmbr0s.png" type="Texture" id=3]
+
+[node name="TextureButton" type="TextureButton"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 2.0
+margin/top = 4.0
+margin/right = 132.0
+margin/bottom = 114.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/hover = ExtResource( 1 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = ExtResource( 2 )
+
+[node name="Polygon2D 2" type="Polygon2D" parent="."]
+
+transform/pos = Vector2( 14.3694, 16.7527 )
+polygon = Vector2Array( 0, 0, 110, 0, 110, 90, 0, 90 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 19.1609, 23.8082 )
+texture = ExtResource( 3 )
+centered = false
+
+[connection signal="button_up" from="." to="." method="_on_TextureButton_button_up"]
+
+

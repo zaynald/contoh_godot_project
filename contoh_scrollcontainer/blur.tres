@@ -1,0 +1,33 @@
+[gd_resource type="CanvasItemShader" format=1]
+
+[resource]
+
+_code = {
+"fragment": "
+float radius = 0.002;
+vec3 col = vec3(0);
+
+col+= texscreen(SCREEN_UV+vec2(-radius,-radius));
+col+= texscreen(SCREEN_UV+vec2(0,-radius));
+col+= texscreen(SCREEN_UV+vec2(radius,-radius));
+
+col+= texscreen(SCREEN_UV+vec2(-radius,0));
+col+= texscreen(SCREEN_UV+vec2(0,0));
+col+= texscreen(SCREEN_UV+vec2(radius,0));
+
+
+col+= texscreen(SCREEN_UV+vec2(-radius,radius));
+col+= texscreen(SCREEN_UV+vec2(0,radius));
+col+= texscreen(SCREEN_UV+vec2(radius,radius));
+
+col/=9.0;
+COLOR.rgb=col;
+
+",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+
