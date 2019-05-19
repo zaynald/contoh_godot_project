@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://group.tscn" type="PackedScene" id=3]
+
+[node name="main" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="player" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 311.526, 179.569 )
+
+[node name="Sprite" type="Sprite" parent="player"]
+
+texture = ExtResource( 2 )
+
+[node name="group" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 603.654, 303.051 )
+enemy_name = "enemy 1"
+
+[node name="group1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 182.388, 271.321 )
+enemy_name = "enemy 2"
+
+[node name="group2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 286.394, 406.982 )
+enemy_name = "enemy 3"
+
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 767.0
+margin/top = 118.0
+margin/right = 881.0
+margin/bottom = 156.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+
