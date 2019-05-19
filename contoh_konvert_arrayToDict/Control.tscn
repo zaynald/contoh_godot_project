@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Control.gd" type="Script" id=1]
+[ext_resource path="res://item.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = ExtResource( 1 )
+number = 0
+done = null
+character_class = 0
+character_name = null
+file = null
+file2 = null
+text = "dd"
+i = 20
+j = 20
+k = -10.0
+l = 100.0
+warna = null
+warna2 = Color( 0.414888, 0.163422, 0.820313, 1 )
+node = null
+spell_elements = 1024
+spell_elements = 1024
+a = [ 1, 2, 3 ]
+b = [ 1, 2, 3 ]
+
+[node name="ItemList" type="ItemList" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 511.0
+margin/top = 145.0
+margin/right = 987.0
+margin/bottom = 411.0
+script/script = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 23.0
+margin/top = 19.0
+margin/right = 484.0
+margin/bottom = 308.0
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+
