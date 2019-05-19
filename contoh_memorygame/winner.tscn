@@ -1,0 +1,140 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://winner.gd" type="Script" id=1]
+[ext_resource path="res://winer.png" type="Texture" id=2]
+[ext_resource path="res://restart.png" type="Texture" id=3]
+[ext_resource path="res://restarthover.png" type="Texture" id=4]
+[ext_resource path="res://menu/skor.png" type="Texture" id=5]
+[ext_resource path="res://menu/menu.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "show"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("bg:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 1.0 ] }
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "hide"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("bg:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
+
+[node name="win" type="Node2D"]
+
+z/z = 20
+script/script = ExtResource( 1 )
+
+[node name="bg" type="Polygon2D" parent="."]
+
+transform/pos = Vector2( -13.1711, -17.8369 )
+transform/scale = Vector2( 0.819915, 0.854209 )
+polygon = Vector2Array( 1.04692, 0.951981, 1026.5, 0.159714, 1026.04, 602.38, 2.53119, 602.651 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="visual" type="Sprite" parent="bg"]
+
+transform/pos = Vector2( 505.632, 216.207 )
+transform/scale = Vector2( 1.21964, 1.17067 )
+texture = ExtResource( 2 )
+
+[node name="restart" type="TextureButton" parent="bg"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 440.498
+margin/top = 514.906
+margin/right = 541.498
+margin/bottom = 565.906
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 3 )
+textures/hover = ExtResource( 4 )
+params/scale = Vector2( 0.5, 0.55 )
+
+[node name="save" type="TextureButton" parent="bg"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 804.0
+margin/top = 475.0
+margin/right = 894.0
+margin/bottom = 579.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 5 )
+
+[node name="TextureButton" type="TextureButton" parent="bg"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 898.0
+margin/top = 476.0
+margin/right = 988.0
+margin/bottom = 580.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/show = SubResource( 1 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="AnimationPlayer 2" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/hide = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[connection signal="pressed" from="bg/restart" to="." method="_on_restart_pressed"]
+
+[connection signal="pressed" from="bg/save" to="." method="_on_save_pressed"]
+
+[connection signal="pressed" from="bg/TextureButton" to="." method="_on_TextureButton_pressed"]
+
+[connection signal="finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_finished"]
+
+[connection signal="finished" from="AnimationPlayer 2" to="." method="_on_AnimationPlayer_2_finished"]
+
+

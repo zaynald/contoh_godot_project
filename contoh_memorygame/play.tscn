@@ -1,0 +1,471 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://mainplay.gd" type="Script" id=1]
+[ext_resource path="res://tanya.png" type="Texture" id=2]
+[ext_resource path="res://click.wav" type="Sample" id=3]
+[ext_resource path="res://waktu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://menu/exitgdoor.png" type="Texture" id=5]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/click = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
+
+[node name="play" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="box" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 69.7187, 30.7582 )
+transform/scale = Vector2( 0.3, 0.3 )
+
+[node name="lok1" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 168.0
+margin/top = -3.0
+margin/right = 499.0
+margin/bottom = 333.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok2" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 534.0
+margin/top = -3.0
+margin/right = 865.0
+margin/bottom = 333.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok3" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 901.0
+margin/top = -3.0
+margin/right = 1232.0
+margin/bottom = 333.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok4" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1268.0
+margin/top = -3.0
+margin/right = 1599.0
+margin/bottom = 333.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok5" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1634.0
+margin/top = -3.0
+margin/right = 1965.0
+margin/bottom = 333.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok6" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 168.0
+margin/top = 363.0
+margin/right = 499.0
+margin/bottom = 699.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok7" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 534.0
+margin/top = 363.0
+margin/right = 865.0
+margin/bottom = 699.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok8" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 901.0
+margin/top = 363.0
+margin/right = 1232.0
+margin/bottom = 699.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok9" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1268.0
+margin/top = 363.0
+margin/right = 1599.0
+margin/bottom = 699.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok10" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1634.0
+margin/top = 363.0
+margin/right = 1965.0
+margin/bottom = 699.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok11" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 168.0
+margin/top = 730.0
+margin/right = 499.0
+margin/bottom = 1066.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok12" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 534.0
+margin/top = 730.0
+margin/right = 865.0
+margin/bottom = 1066.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok13" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 901.0
+margin/top = 730.0
+margin/right = 1232.0
+margin/bottom = 1066.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok14" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1268.0
+margin/top = 730.0
+margin/right = 1599.0
+margin/bottom = 1066.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok15" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1634.0
+margin/top = 730.0
+margin/right = 1965.0
+margin/bottom = 1066.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok16" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 168.0
+margin/top = 1097.0
+margin/right = 499.0
+margin/bottom = 1433.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok17" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 534.0
+margin/top = 1097.0
+margin/right = 865.0
+margin/bottom = 1433.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok18" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 901.0
+margin/top = 1097.0
+margin/right = 1232.0
+margin/bottom = 1433.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok19" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1268.0
+margin/top = 1097.0
+margin/right = 1599.0
+margin/bottom = 1433.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="lok20" type="TextureButton" parent="box"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 1634.0
+margin/top = 1097.0
+margin/right = 1965.0
+margin/bottom = 1433.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="bg" type="Polygon2D" parent="."]
+
+transform/pos = Vector2( -1.63703, -0.489939 )
+z/z = -10
+polygon = Vector2Array( -4.4035, -11.441, 813.794, -11.441, 813.794, 514.723, -4.4035, 517.24 )
+uv = Vector2Array(  )
+color = Color( 0.0132904, 0.261719, 0.0637524, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="Label 2" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 718.0
+margin/top = 424.0
+margin/right = 758.0
+margin/bottom = 438.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="soundef" type="SamplePlayer2D" parent="."]
+
+params/volume_db = -10.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+[node name="musikplayoff" type="Node2D" parent="."]
+
+transform/pos = Vector2( 690, 419 )
+z/z = -1
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 9.0
+margin/top = 445.0
+margin/right = 41.0
+margin/bottom = 464.0
+text = "info"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 686.0
+margin/top = 18.0
+margin/right = 718.0
+margin/bottom = 37.0
+text = "time"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="waktu" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 753.697, 25.8445 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+
+visibility/opacity = 0.5
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 685.0
+margin/top = 404.0
+margin/right = 854.0
+margin/bottom = 525.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 5 )
+
+[connection signal="button_down" from="box/lok1" to="." method="_on_lok1_button_down"]
+
+[connection signal="button_down" from="box/lok2" to="." method="_on_lok2_button_down"]
+
+[connection signal="pressed" from="box/lok3" to="." method="_on_lok3_pressed"]
+
+[connection signal="pressed" from="box/lok4" to="." method="_on_lok4_pressed"]
+
+[connection signal="button_down" from="box/lok5" to="." method="_on_lok5_button_down"]
+
+[connection signal="pressed" from="box/lok6" to="." method="_on_lok6_pressed"]
+
+[connection signal="pressed" from="box/lok7" to="." method="_on_lok7_pressed"]
+
+[connection signal="pressed" from="box/lok8" to="." method="_on_lok8_pressed"]
+
+[connection signal="pressed" from="box/lok9" to="." method="_on_lok9_pressed"]
+
+[connection signal="pressed" from="box/lok10" to="." method="_on_lok10_pressed"]
+
+[connection signal="pressed" from="box/lok11" to="." method="_on_lok11_pressed"]
+
+[connection signal="pressed" from="box/lok12" to="." method="_on_lok12_pressed"]
+
+[connection signal="pressed" from="box/lok13" to="." method="_on_lok13_pressed"]
+
+[connection signal="pressed" from="box/lok14" to="." method="_on_lok14_pressed"]
+
+[connection signal="pressed" from="box/lok15" to="." method="_on_lok15_pressed"]
+
+[connection signal="pressed" from="box/lok16" to="." method="_on_lok16_pressed"]
+
+[connection signal="pressed" from="box/lok17" to="." method="_on_lok17_pressed"]
+
+[connection signal="pressed" from="box/lok18" to="." method="_on_lok18_pressed"]
+
+[connection signal="pressed" from="box/lok19" to="." method="_on_lok19_pressed"]
+
+[connection signal="pressed" from="box/lok20" to="." method="_on_lok20_pressed"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+
+

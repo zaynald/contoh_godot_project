@@ -1,0 +1,134 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://menu/setting.gd" type="Script" id=1]
+[ext_resource path="res://menu/back.png" type="Texture" id=2]
+
+[node name="setting" type="Node2D"]
+
+z/relative = false
+script/script = ExtResource( 1 )
+
+[node name="CheckBox" type="CheckBox" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 360.0
+margin/top = 160.0
+margin/right = 454.0
+margin/bottom = 183.0
+toggle_mode = true
+is_pressed = true
+enabled_focus_mode = 2
+shortcut = null
+text = "playsound"
+flat = false
+align = 0
+
+[node name="Label1" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 243.0
+margin/top = 164.0
+margin/right = 349.0
+margin/bottom = 178.0
+text = "Back Sound"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="CheckBox 2" type="CheckBox" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 360.0
+margin/top = 240.0
+margin/right = 419.0
+margin/bottom = 263.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Indo Land"
+flat = false
+align = 0
+
+[node name="CheckBox 3" type="CheckBox" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 360.0
+margin/top = 270.0
+margin/right = 422.0
+margin/bottom = 293.0
+toggle_mode = true
+is_pressed = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Abjad"
+flat = false
+align = 0
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 243.0
+margin/top = 244.0
+margin/right = 349.0
+margin/bottom = 258.0
+text = "Jenis gambar"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextureButton 2" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 9.0
+margin/right = 130.0
+margin/bottom = 146.4
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+params/scale = Vector2( 0.6, 0.6 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+
+transform/pos = Vector2( 3.57628e-07, 0 )
+z/z = -10
+polygon = Vector2Array( 0, 0, 800, 0, 800, 480, 0, 480 )
+uv = Vector2Array(  )
+color = Color( 0, 0.15625, 0.00976563, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]
+
+[connection signal="toggled" from="CheckBox 2" to="." method="_on_CheckBox_2_toggled"]
+
+[connection signal="toggled" from="CheckBox 3" to="." method="_on_CheckBox_3_toggled"]
+
+[connection signal="pressed" from="TextureButton 2" to="." method="_on_TextureButton_2_pressed"]
+
+
